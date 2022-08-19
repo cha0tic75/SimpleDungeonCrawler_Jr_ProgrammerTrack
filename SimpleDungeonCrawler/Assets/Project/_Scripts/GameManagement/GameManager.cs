@@ -15,6 +15,7 @@ namespace Project.GameManagement
 		#region Inspector Assigned Field(s):
 		[field: SerializeField] public CameraSystem.CameraTools CameraTools { get; private set; }
 		[field: SerializeField] public AudioSystem.AudioHandler AudioHandler { get; private set; }
+		[field: SerializeField] public UI.FadePanelUI FadePanel { get; private set; }
 		#endregion
 
 		#region Internal State Field(s):
@@ -26,7 +27,12 @@ namespace Project.GameManagement
 		#endregion
 
 		#region MonoBehaviour Callback Method(s):
-		private void Start() => CreateGameStateBehaviourDictionary();
+		protected override void Awake()
+		{
+			base.Awake();
+			CreateGameStateBehaviourDictionary();
+		}
+		private void Start() => ChangeGameState(GameState.MainMenu);
 		#endregion
 		
 		#region Public API:
@@ -45,10 +51,14 @@ namespace Project.GameManagement
 		{
 			m_gameStateBehaviourDictionary = new Dictionary<GameState, BaseGameStateBehaviour>()
 			{
-
+				{ GameState.MainMenu, new BasicLoadSceneGameStateBehaviour(SceneName.MainMenu, HideAllPopupPanels) }, 
+				{ GameState.GamePlay, new BasicLoadSceneGameStateBehaviour(SceneName.GameLevel, HideAllPopupPanels) }
 			};
 
-			ChangeGameState(GameState.MainMenu);
+			void HideAllPopupPanels()
+			{
+				// TODO: Hide all the Popup Panels(You Died, You Won, Pause)
+			}
 		}
 		#endregion
 	}
