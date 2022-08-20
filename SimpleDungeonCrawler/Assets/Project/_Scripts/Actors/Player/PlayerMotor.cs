@@ -12,7 +12,7 @@ namespace Project.Actors.Player
 	public class PlayerMotor : MonoBehaviour, IMovementDataProvider
 	{
 		#region Inspector Assigned Field(s):
-		[SerializeField] private float m_moveSpeed =120f ;
+		[SerializeField] private float m_moveSpeed = 2.5f;
 		[SerializeField] private float m_sprintSpeedModifier = 1.4f;
 		[SerializeField] private PlayerSprintComponent m_sprintComponent;
 		#endregion

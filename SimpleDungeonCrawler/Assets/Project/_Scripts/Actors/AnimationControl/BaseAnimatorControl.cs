@@ -26,7 +26,7 @@ namespace Project.Actors
 		}
 
 		private void Update() =>
-			m_animator.SetFloat(s_movementSpeedFloatAnimParam, m_movementDataProvider.Velocity.magnitude);
+			m_animator?.SetFloat(s_movementSpeedFloatAnimParam, m_movementDataProvider.Velocity.magnitude);
 		#endregion
 	}
 }

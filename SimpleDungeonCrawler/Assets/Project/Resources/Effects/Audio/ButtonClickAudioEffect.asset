@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0859aad7aef0cf64e806f22c699de0f8, type: 3}
   m_Name: ButtonClickAudioEffect
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: UI Button Click Sound
+  <Name>k__BackingField: UI Button Click Audio Clip
   <AudioClip>k__BackingField: {fileID: 8300000, guid: 0d01e3b27915de54face4556d94aa212, type: 3}
   <Volume>k__BackingField: 0.7

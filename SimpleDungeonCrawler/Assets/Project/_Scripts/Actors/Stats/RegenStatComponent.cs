@@ -35,10 +35,10 @@ namespace Project.Actors.Stats
         #region Internally Used Method(s):
         private void AttemptRegeneration()
         {
-            if (Actors.Player.Input.PlayerInputManager.Instance.MovementInput != Vector2.zero)
-            { 
-                m_lastConsumeCurrentValueTime = Time.time;
-            }
+            // if (Actors.Player.Input.PlayerInputManager.Instance.MovementInput != Vector2.zero)
+            // { 
+            //     m_lastConsumeCurrentValueTime = Time.time;
+            // }
             if (Time.time >  m_regenAfterWaitTime + m_lastConsumeCurrentValueTime)
             {
                 if (CurrentValue < ValueRange.Max)
