@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Project
 {
-    public abstract class TransformMonoBehaviour : MonoBehaviour
+    public abstract class TransformMonoBehaviour : MonoBehaviour, ITransformProvider
 	{
 		#region Properties:
 		public Transform Transform { get; private set; }

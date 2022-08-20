@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Project.Effects
 {
-    public abstract class BaseEffect_SO : ScriptableObject
+    public abstract class BaseEffect_SO : Base_SO
 	{	
 		#region Public API:
 		public abstract void PerformEffect(GameObject _gameObject);
