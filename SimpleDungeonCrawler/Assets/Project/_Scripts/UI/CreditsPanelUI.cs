@@ -7,9 +7,9 @@
 using System.Collections;
 using UnityEngine;
 
-namespace Project
+namespace Project.UI
 {
-	public class CreditsPanelUI : MonoBehaviour
+    public class CreditsPanelUI : MonoBehaviour
 	{
 		#region Inspector Assigned Field(s):
 		[SerializeField] private float m_loadWaitTime = 2f;

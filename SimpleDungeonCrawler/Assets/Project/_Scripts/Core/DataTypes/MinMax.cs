@@ -30,7 +30,11 @@ namespace Project
 	public class MinMaxFloat : MinMax<float> 
 	{
 		#region Constructor(s):
-		public MinMaxFloat() { }
+		public MinMaxFloat()
+		{ 
+			Min = 0f;
+			Max = 0f;
+		}
 		public MinMaxFloat(float _min, float _max)
 		{
 			Min = _min;
@@ -47,7 +51,11 @@ namespace Project
 	public class MinMaxInt : MinMax<int> 
 	{
 		#region Constructor(s):
-		public MinMaxInt() {}
+		public MinMaxInt()
+		{ 
+			Min = 0;
+			Max = 0;
+		}
 		public MinMaxInt(int _min, int _max)
 		{
 			Min = _min;
