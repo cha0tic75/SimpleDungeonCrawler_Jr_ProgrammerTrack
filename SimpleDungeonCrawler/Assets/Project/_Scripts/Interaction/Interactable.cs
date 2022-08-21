@@ -38,7 +38,7 @@ namespace Project.Interaction
 				BaseInteractionHandler interactionHandler = m_interactionHandlers[i];
 				if (interactionHandler != null && interactionHandler.enabled == true)
 				{
-					interactionHandler.Handle(_interactor);
+					interactionHandler.HandleInteraction(_interactor);
 				}
 			}
 		}

@@ -55,14 +55,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1098832954316436939, guid: 4630fdba6fcc3bd41b73712e059cb944, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 4630fdba6fcc3bd41b73712e059cb944, type: 3}
 --- !u!1 &7071722037261763248 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4900408068514571116, guid: 4630fdba6fcc3bd41b73712e059cb944, type: 3}
   m_PrefabInstance: {fileID: 2747884708788363740}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6920264920772897908
+--- !u!114 &4591237840305010885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -71,12 +72,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7071722037261763248}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da44ce0d1ac8b8a43846a3f1a82aee17, type: 3}
+  m_Script: {fileID: 11500000, guid: 228c2b87785b25f429920f8eb42027ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <AcquisitionType>k__BackingField: 0
-  <StatTypes>k__BackingField:
-  - {fileID: 11400000, guid: 47bd44e619c117943a7ddcee50e945fe, type: 2}
-  <DamageRange>k__BackingField:
-    <Min>k__BackingField: 1
-    <Max>k__BackingField: 2
+  m_statType: {fileID: 0}
+  m_acquisitionType: 1
+  m_damageRange:
+    <Min>k__BackingField: 0
+    <Max>k__BackingField: 1
+  m_damageEffects: []

@@ -9,7 +9,7 @@ using UnityEngine;
 
 namespace Project.Actors.Stats
 {
-    public interface IDamagable : IHandlerDataProvider
+    public interface IDamagable
 	{
 		event Action<float, StatComponent> OnTakeDamageEvent;
 		StatType_SO StatType { get; }

@@ -23,15 +23,17 @@ namespace Project.Interaction
         private void Start() => SetSpriteRendererColor();
         #endregion
 
-        #region Internally Used Method(s):
-        protected override void HandleInteraction(IInteractorDataProvider _interactor)
+        #region Public API:
+        public override void HandleInteraction(IInteractorDataProvider _interactor)
         {
             if (_interactor.Transform.TryGetComponent<Actors.Player.PlayerInventory>(out var inventory))
             {
                 inventory.AddItem(this);
             }
         }
+        #endregion
 
+        #region Internally Used Method(s):
         private void SetSpriteRendererColor()
         {
             if (ItemSO == null) { return; }

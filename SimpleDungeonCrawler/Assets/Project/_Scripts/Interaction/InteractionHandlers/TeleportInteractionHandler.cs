@@ -44,8 +44,8 @@ namespace Project.Interaction
         private void Awake() => Transform = transform;
         #endregion
 
-		#region Internally Used Method(s):
-		protected override void HandleInteraction(IInteractorDataProvider _interactDataProvider)
+		#region Public API:
+		public  override void HandleInteraction(IInteractorDataProvider _interactDataProvider)
 		{
 			if (_interactDataProvider.Transform != null)
             {

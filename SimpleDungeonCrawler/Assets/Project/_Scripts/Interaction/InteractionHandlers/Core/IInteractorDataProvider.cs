@@ -6,10 +6,8 @@
 
 namespace Project.Interaction
 {
-    public interface IInteractorDataProvider : IHandlerDataProvider { }
-
-    public interface IDamagableDataProvider : IHandlerDataProvider
-    {
-        Actors.Stats.IDamagable Damagable { get; }
+    public interface IInteractorDataProvider
+    { 
+        UnityEngine.Transform Transform { get; }
     }
 }

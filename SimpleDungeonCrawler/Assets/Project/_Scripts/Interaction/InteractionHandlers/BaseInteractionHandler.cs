@@ -4,23 +4,14 @@
 // Written by Tim McCune <tim.mccune1975@gmail.com>
 // ######################################################################
 
+using UnityEngine;
+
 namespace Project.Interaction
 {
-    public abstract class BaseInteractionHandler : BaseHandler
+    public abstract class BaseInteractionHandler : MonoBehaviour
     {
         #region Public API:
-        public override void Handle(IHandlerDataProvider _Ihandle)
-        {
-            IInteractorDataProvider interactDataProvider = (_Ihandle as IInteractorDataProvider);
-            if (interactDataProvider != null)
-            {
-                HandleInteraction(interactDataProvider);
-            }
-        }
-		#endregion
-
-		#region Internally Used Method(s):
-		protected abstract void HandleInteraction(IInteractorDataProvider _interactDataProvider);
+		public abstract void HandleInteraction(IInteractorDataProvider _interactDataProvider);
 		#endregion
     }
 }

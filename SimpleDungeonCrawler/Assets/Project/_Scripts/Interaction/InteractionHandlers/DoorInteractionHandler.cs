@@ -38,8 +38,8 @@ namespace Project.Interaction
 		} 
 		#endregion
 
-        #region Internally Used Method(s):
-		protected override void HandleInteraction(IInteractorDataProvider _interactor)
+		#region Public API:
+		public override void HandleInteraction(IInteractorDataProvider _interactor)
 		{
 			if (_interactor.Transform.TryGetComponent<Actors.Player.PlayerInventory>(out var inventory))
 			{
@@ -52,6 +52,9 @@ namespace Project.Interaction
 				}
 			}
 		}
+		#endregion
+
+        #region Internally Used Method(s):
         private void SetExitState(bool _state)
 		{
 			m_animator.SetBool(s_isOpenedBoolAnimParam, _state);
