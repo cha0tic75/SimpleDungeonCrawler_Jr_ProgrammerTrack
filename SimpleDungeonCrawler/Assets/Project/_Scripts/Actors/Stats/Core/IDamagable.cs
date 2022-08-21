@@ -9,11 +9,10 @@ using UnityEngine;
 
 namespace Project.Actors.Stats
 {
-    public interface IDamagable
+    public interface IDamagable : IHandlerDataProvider
 	{
 		event Action<float, StatComponent> OnTakeDamageEvent;
 		StatType_SO StatType { get; }
-		GameObject GO { get; }
 
 		void Consume(float _damageAmount, StatConsumeType _consumeType);
 	}

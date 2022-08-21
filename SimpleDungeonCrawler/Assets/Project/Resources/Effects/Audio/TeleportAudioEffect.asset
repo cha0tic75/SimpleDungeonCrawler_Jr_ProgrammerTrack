@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0859aad7aef0cf64e806f22c699de0f8, type: 3}
   m_Name: TeleportAudioEffect
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: 0 Clip
+  <Name>k__BackingField: Teleport Audio Clip
   <AudioClip>k__BackingField: {fileID: 8300000, guid: c0b7c4234fdb73f40b42eba54764d875, type: 3}
   <Volume>k__BackingField: 0.7

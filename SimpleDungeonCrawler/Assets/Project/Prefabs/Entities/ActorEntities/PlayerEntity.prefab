@@ -174,7 +174,9 @@ MonoBehaviour:
     <Min>k__BackingField: 0
     <Max>k__BackingField: 10
   m_statMeter: {fileID: 0}
-  m_damageEffects: []
+  m_damageEffects:
+  - {fileID: 11400000, guid: 55acecf6c6226604c83eb182d36fce3c, type: 2}
+  - {fileID: 11400000, guid: b34cd7f56fcac834a96c2a18d247c40d, type: 2}
   m_regenAmount: 0.25
   m_regenAfterWaitTime: 3
 --- !u!114 &6237702773371368033
@@ -195,7 +197,9 @@ MonoBehaviour:
     <Min>k__BackingField: 0
     <Max>k__BackingField: 10
   m_statMeter: {fileID: 0}
-  m_damageEffects: []
+  m_damageEffects:
+  - {fileID: 11400000, guid: 7a687a4ef7511344d9dc7c99fc139f90, type: 2}
+  - {fileID: 11400000, guid: a37cc5049abdb8d4b9b7db9f37bacbc5, type: 2}
   m_regenAmount: 0.5
   m_regenAfterWaitTime: 2
 --- !u!114 &6671281794781194806

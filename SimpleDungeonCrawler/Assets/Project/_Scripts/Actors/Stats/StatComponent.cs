@@ -32,7 +32,7 @@ namespace Project.Actors.Stats
 
 		#region Properties:
 		public float Percent => CurrentValue / (float)ValueRange.Max;
-		public GameObject GO => gameObject;
+		public Transform Transform => transform;
 		#endregion
 
         #region MonoBehaviour Callback Method(s):

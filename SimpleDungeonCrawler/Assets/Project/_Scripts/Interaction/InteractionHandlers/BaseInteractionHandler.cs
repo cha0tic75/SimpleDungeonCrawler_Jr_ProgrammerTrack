@@ -12,7 +12,10 @@ namespace Project.Interaction
         public override void Handle(IHandlerDataProvider _Ihandle)
         {
             IInteractorDataProvider interactDataProvider = (_Ihandle as IInteractorDataProvider);
-            HandleInteraction(interactDataProvider);
+            if (interactDataProvider != null)
+            {
+                HandleInteraction(interactDataProvider);
+            }
         }
 		#endregion
 
