@@ -23,6 +23,7 @@ namespace Project.UI
 		private IEnumerator LoadMainMenuAfterTimeCoroutine()
 		{
 			yield return HelperMethods.CustomWFS(m_loadWaitTime);
+			yield return GameManagement.GameManager.Instance.FadePanel.FadeOutCoroutine(2f);
 			GameManagement.GameManager.Instance.ChangeGameState(GameManagement.GameState.MainMenu);
 		}
 		#endregion

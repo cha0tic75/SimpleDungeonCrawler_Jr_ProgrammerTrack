@@ -48,7 +48,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.98
-  m_Color: {r: 0.8301887, g: 0.8098256, b: 0.8098256, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.7}
   m_Intensity: 0.57
   m_LightVolumeIntensity: 0.2
   m_LightVolumeIntensityEnabled: 1
@@ -117,6 +117,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5612805466579642855, guid: a444b3c6e4940094ea907a66047a1353, type: 3}
+      propertyPath: m_light
+      value: 
+      objectReference: {fileID: 6291191951752974021}
+    - target: {fileID: 5612805466579642855, guid: a444b3c6e4940094ea907a66047a1353, type: 3}
+      propertyPath: m_lightAlpha
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 6450358657922104146, guid: a444b3c6e4940094ea907a66047a1353, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5
@@ -229,15 +237,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ItemSO>k__BackingField: {fileID: 0}
-  m_spriteRenderer: {fileID: 6357968046909371263}
-  m_light: {fileID: 6291191951752974021}
 --- !u!4 &5642148628763279920 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8505576918412447681, guid: a444b3c6e4940094ea907a66047a1353, type: 3}
-  m_PrefabInstance: {fileID: 4054666196628852209}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &6357968046909371263 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 6951617379600825998, guid: a444b3c6e4940094ea907a66047a1353, type: 3}
   m_PrefabInstance: {fileID: 4054666196628852209}
   m_PrefabAsset: {fileID: 0}

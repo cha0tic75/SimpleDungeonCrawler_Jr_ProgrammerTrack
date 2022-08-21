@@ -33,8 +33,11 @@ namespace Project.Actors.Player
         private void Start() => 
 				GameManagement.GameManager.Instance.CameraTools.CameraFollow.SetTargetTransform(transform, true);
 
-		private void FixedUpdate() =>			
-				m_rigidbody.velocity = Actors.Player.Input.PlayerInputManager.Instance.MovementInput.normalized * CurrentMoveSpeed;
+		private void FixedUpdate()
+		{
+			if (GameManagement.GameManager.Instance.CurrentGameState != GameManagement.GameState.GamePlay) { return; }
+			m_rigidbody.velocity = Actors.Player.Input.PlayerInputManager.Instance.MovementInput.normalized * CurrentMoveSpeed;
+		}			
 		#endregion
 	}
 }

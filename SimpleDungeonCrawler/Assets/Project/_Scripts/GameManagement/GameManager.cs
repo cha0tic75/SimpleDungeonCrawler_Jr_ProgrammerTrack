@@ -16,6 +16,9 @@ namespace Project.GameManagement
 		[field: SerializeField] public CameraSystem.CameraTools CameraTools { get; private set; }
 		[field: SerializeField] public AudioSystem.AudioHandler AudioHandler { get; private set; }
 		[field: SerializeField] public UI.FadePanelUI FadePanel { get; private set; }
+		[SerializeField] private GameObject m_pausePanel;
+		[SerializeField] private GameObject m_deathPanel;
+		[SerializeField] private GameObject m_winPanel;
 		#endregion
 
 		#region Internal State Field(s):
@@ -52,12 +55,16 @@ namespace Project.GameManagement
 			m_gameStateBehaviourDictionary = new Dictionary<GameState, BaseGameStateBehaviour>()
 			{
 				{ GameState.MainMenu, new BasicLoadSceneGameStateBehaviour(SceneName.MainMenu, HideAllPopupPanels) }, 
-				{ GameState.GamePlay, new BasicLoadSceneGameStateBehaviour(SceneName.GameLevel, HideAllPopupPanels) }
+				{ GameState.GamePlay, new BasicLoadSceneGameStateBehaviour(SceneName.GameLevel, HideAllPopupPanels) }, 
+				{ GameState.Death, new CoroutineLoadSceneGameStateBehaviour(SceneName.MainMenu, m_deathPanel) }, 
+				{ GameState.Win, new CoroutineLoadSceneGameStateBehaviour(SceneName.Credits, m_winPanel) },
 			};
 
 			void HideAllPopupPanels()
 			{
-				// TODO: Hide all the Popup Panels(You Died, You Won, Pause)
+				m_pausePanel.SetActive(false);
+				m_deathPanel.SetActive(false);
+				m_winPanel.SetActive(false);
 			}
 		}
 		#endregion

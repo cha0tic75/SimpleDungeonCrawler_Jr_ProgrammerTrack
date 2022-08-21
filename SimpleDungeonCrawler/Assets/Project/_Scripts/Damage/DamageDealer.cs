@@ -4,7 +4,6 @@
 // Written by Tim McCune <tim.mccune1975@gmail.com>
 // ######################################################################
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Project.Actors.Stats;
@@ -13,6 +12,7 @@ using UnityEngine;
 
 namespace Project.Damage
 {
+
     [RequireComponent(typeof(Targeting.BaseTargetProvider<Actors.Stats.IDamagable>))]
     public class DamageDealer : MonoBehaviour
 	{
@@ -51,8 +51,6 @@ namespace Project.Damage
         {
             List<Actors.Stats.IDamagable> damagables = _damagables.ToList();
             m_damageDealerHandlers.ForEach(dh => dh.HandleDamage(damagables, _acquisitionType));
-
-            Debug.Log($"TargetProvider has informed DamageDealer of {_damagables.Length} IDamagables have entered!");
         }
         #endregion
     }

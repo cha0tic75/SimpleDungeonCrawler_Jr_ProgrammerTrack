@@ -90,4 +90,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc15dd5792ff8944bae8658751311c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_damageHandlers: []
+  m_damageDealerHandlers: []

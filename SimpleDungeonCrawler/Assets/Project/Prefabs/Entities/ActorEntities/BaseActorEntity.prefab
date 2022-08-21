@@ -48,7 +48,7 @@ MonoBehaviour:
   m_LightType: 3
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.86
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.3}
   m_Intensity: 0.79
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
@@ -117,6 +117,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5088290366422596469, guid: b8f22d3de9a85cb49a8c14e752e79cc0, type: 3}
+      propertyPath: m_light
+      value: 
+      objectReference: {fileID: 6571466718692734767}
     - target: {fileID: 9038844096764763475, guid: b8f22d3de9a85cb49a8c14e752e79cc0, type: 3}
       propertyPath: m_RootOrder
       value: 0

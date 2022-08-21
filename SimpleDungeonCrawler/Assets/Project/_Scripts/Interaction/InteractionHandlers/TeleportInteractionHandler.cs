@@ -12,8 +12,6 @@ namespace Project.Interaction
 	{
         #region Inspector Assigned Field(s):
         [SerializeField] private Vector3 m_teleportOffset;
-        [SerializeField] private SpriteRenderer m_spriteRenderer;
-        [SerializeField] private Color m_color = new Color(1f, 1f, 1f, 1f);
 #if UNITY_EDITOR
         [SerializeField] private bool m_showGizmos;
 #endif
@@ -25,13 +23,7 @@ namespace Project.Interaction
         #endregion
 
         #region MonoBehaviour Callback Method(s):
-#if UNITY_EDITOR
-        private void OnValidate()
-        {
-            if (m_spriteRenderer == null) { return; }
-            m_spriteRenderer.color = m_color;
-            if (Transform == null) { Transform = transform; }
-        }
+#if UNITY_EDITOR    
         private void OnDrawGizmosSelected() 
         {
             if (!m_showGizmos) { return; }
