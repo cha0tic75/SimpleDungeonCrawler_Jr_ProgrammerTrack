@@ -52,7 +52,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d3120ea85841d6a47be3589134191fd1, type: 2}
+  - {fileID: 2100000, guid: 00b12c07032d35d468ff4ca9be14e8d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -158,6 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_color: {r: 1, g: 1, b: 1, a: 1}
   m_item: {fileID: 0}
+  m_overrideItemColor: 0
   m_spriteRenderer: {fileID: 7710328418897325084}
   m_light: {fileID: 0}
   m_lightAlpha: 0.3

@@ -55,21 +55,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6291191951752974021, guid: 859e31cdf497ee9479b8724279bb81ab, type: 3}
+      propertyPath: m_Color.b
+      value: 0.49803925
+      objectReference: {fileID: 0}
+    - target: {fileID: 6291191951752974021, guid: 859e31cdf497ee9479b8724279bb81ab, type: 3}
+      propertyPath: m_Color.g
+      value: 0.48235297
+      objectReference: {fileID: 0}
+    - target: {fileID: 6291191951752974021, guid: 859e31cdf497ee9479b8724279bb81ab, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5529412
+      objectReference: {fileID: 0}
     - target: {fileID: 6357968046909371263, guid: 859e31cdf497ee9479b8724279bb81ab, type: 3}
       propertyPath: m_Color.b
-      value: 1
+      value: 0.49803925
       objectReference: {fileID: 0}
     - target: {fileID: 6357968046909371263, guid: 859e31cdf497ee9479b8724279bb81ab, type: 3}
       propertyPath: m_Color.g
-      value: 1
+      value: 0.48235297
       objectReference: {fileID: 0}
     - target: {fileID: 6357968046909371263, guid: 859e31cdf497ee9479b8724279bb81ab, type: 3}
       propertyPath: m_Color.r
-      value: 1
+      value: 0.5529412
       objectReference: {fileID: 0}
     - target: {fileID: 7573679021367063342, guid: 859e31cdf497ee9479b8724279bb81ab, type: 3}
       propertyPath: <ItemSO>k__BackingField
       value: 
       objectReference: {fileID: 11400000, guid: 45a7366ef0c7d034abdcea703e95711b, type: 2}
+    - target: {fileID: 8476233790165967894, guid: 859e31cdf497ee9479b8724279bb81ab, type: 3}
+      propertyPath: m_color.b
+      value: 0.49803925
+      objectReference: {fileID: 0}
+    - target: {fileID: 8476233790165967894, guid: 859e31cdf497ee9479b8724279bb81ab, type: 3}
+      propertyPath: m_color.g
+      value: 0.48235297
+      objectReference: {fileID: 0}
+    - target: {fileID: 8476233790165967894, guid: 859e31cdf497ee9479b8724279bb81ab, type: 3}
+      propertyPath: m_color.r
+      value: 0.5529412
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 859e31cdf497ee9479b8724279bb81ab, type: 3}

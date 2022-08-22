@@ -13,6 +13,7 @@ namespace Project.GameManagement
     public class GameManager : PersistentSinglonMonoBehaviour<GameManager>
 	{
 		#region Inspector Assigned Field(s):
+		[SerializeField] private GameState m_defaultGameState = GameState.MainMenu;
 		[field: SerializeField] public CameraSystem.CameraTools CameraTools { get; private set; }
 		[field: SerializeField] public AudioSystem.AudioHandler AudioHandler { get; private set; }
 		[field: SerializeField] public UI.FadePanelUI FadePanel { get; private set; }
@@ -35,7 +36,7 @@ namespace Project.GameManagement
 			base.Awake();
 			CreateGameStateBehaviourDictionary();
 		}
-		private void Start() => ChangeGameState(GameState.MainMenu);
+		private void Start() => ChangeGameState(m_defaultGameState);
 		#endregion
 		
 		#region Public API:

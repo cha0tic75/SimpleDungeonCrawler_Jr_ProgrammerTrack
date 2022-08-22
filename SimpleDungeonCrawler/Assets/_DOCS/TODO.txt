@@ -1,7 +1,4 @@
 TODO:
 08/21/2022:
-    - Create Player Death: Create a PlayerDeathHandler that will inform the GameManager of the players death
-    - Create the Enemy concept
-    - Place Enemies in the level
     - Make a branch to change build to Android and implement Mobile controls.
     - Fix the GameCredit scene.  I would like it to fade out before cutting to MainMenu

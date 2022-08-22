@@ -8,12 +8,11 @@ using UnityEngine;
 
 namespace Project.Actors
 {
-    [RequireComponent(typeof(Animator))]
 	[RequireComponent(typeof(IMovementDataProvider))]
-	public class BaseAnimatorControl : MonoBehaviour
+	public abstract class BaseAnimatorControl : MonoBehaviour
 	{
 		#region Internal State Field(s):
-		protected Animator m_animator;
+		[SerializeField] protected Animator m_animator;
 		private IMovementDataProvider m_movementDataProvider;
 		private static int s_movementSpeedFloatAnimParam = Animator.StringToHash("MovementSpeed");
 		#endregion
@@ -21,7 +20,10 @@ namespace Project.Actors
 		#region MonoBehaviour Callback Method(s):
 		private void Awake()
 		{
-			m_animator = GetComponent<Animator>();
+			if (m_animator == null)
+			{
+				m_animator = GetComponent<Animator>();
+			}
 			m_movementDataProvider = GetComponent<IMovementDataProvider>();
 		}
 

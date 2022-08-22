@@ -22,6 +22,13 @@ namespace Project.Damage
         private Coroutine m_damageCoroutine = null;
         private List<IDamagable> m_currentDamagables = new List<IDamagable>();
         #endregion
+
+        #region MonoBehaviour Callback Method(s):
+        private void OnDisable()
+        {
+            HelperMethods.StopCoroutineIfRunning(ref m_damageCoroutine, this);
+        }
+        #endregion
  
         #region Internally Used Method(s):
         protected override void DealDamage(List<IDamagable> _damagables, Targeting.TargetAcquisitionType _acquisitionType)
@@ -72,7 +79,7 @@ namespace Project.Damage
         #region Coroutine(s):
         private IEnumerator DealDamageOverTimeCoroutine()
         {
-            while (true)
+            while (m_currentDamagables.Count > 0)
             {
                 List<IDamagable> currentDamagables = m_currentDamagables.ToList();
                 foreach (var damagable in currentDamagables)
@@ -83,6 +90,7 @@ namespace Project.Damage
 
                 yield return HelperMethods.CustomWFS(m_damageFrequency);
             }
+            m_damageCoroutine = null;
         }
         #endregion
     }

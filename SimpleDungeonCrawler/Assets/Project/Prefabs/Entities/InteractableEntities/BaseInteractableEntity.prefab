@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 284565858689058892, guid: b8f22d3de9a85cb49a8c14e752e79cc0, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7710328418897325084, guid: b8f22d3de9a85cb49a8c14e752e79cc0, type: 3}
       propertyPath: m_SortingLayer
       value: 1
