@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14668c86cd7595547bb625eda9c5a352, type: 3}
+  m_Name: Death Effects Collection
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: 
+  m_damageEffects:
+  - {fileID: 11400000, guid: 2c2d16737cc719a4185076a9215ef4ed, type: 2}
+  - {fileID: 11400000, guid: fea987e77b8400341a9ed3fb5e234b57, type: 2}

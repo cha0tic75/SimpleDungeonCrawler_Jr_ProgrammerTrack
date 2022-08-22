@@ -29,15 +29,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 22862848781219023, guid: 63f7cdb1abb340b40b3a366a6060720e, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 22862848781219023, guid: 63f7cdb1abb340b40b3a366a6060720e, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 22862848781219023, guid: 63f7cdb1abb340b40b3a366a6060720e, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 22862848781219023, guid: 63f7cdb1abb340b40b3a366a6060720e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -99,6 +99,14 @@ PrefabInstance:
       propertyPath: m_color.r
       value: 0.5458704
       objectReference: {fileID: 0}
+    - target: {fileID: 4304430046318007017, guid: 63f7cdb1abb340b40b3a366a6060720e, type: 3}
+      propertyPath: m_lightAlpha
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571466718692734767, guid: 63f7cdb1abb340b40b3a366a6060720e, type: 3}
+      propertyPath: m_Color.a
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 6571466718692734767, guid: 63f7cdb1abb340b40b3a366a6060720e, type: 3}
       propertyPath: m_Color.b
       value: 0.8584906
@@ -110,6 +118,26 @@ PrefabInstance:
     - target: {fileID: 6571466718692734767, guid: 63f7cdb1abb340b40b3a366a6060720e, type: 3}
       propertyPath: m_Color.r
       value: 0.5458704
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571466718692734767, guid: 63f7cdb1abb340b40b3a366a6060720e, type: 3}
+      propertyPath: m_Intensity
+      value: 0.57
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571466718692734767, guid: 63f7cdb1abb340b40b3a366a6060720e, type: 3}
+      propertyPath: m_FalloffIntensity
+      value: 0.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571466718692734767, guid: 63f7cdb1abb340b40b3a366a6060720e, type: 3}
+      propertyPath: m_LightVolumeIntensity
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571466718692734767, guid: 63f7cdb1abb340b40b3a366a6060720e, type: 3}
+      propertyPath: m_PointLightOuterRadius
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6571466718692734767, guid: 63f7cdb1abb340b40b3a366a6060720e, type: 3}
+      propertyPath: m_LightVolumeIntensityEnabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63f7cdb1abb340b40b3a366a6060720e, type: 3}
@@ -139,11 +167,27 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 6200000, guid: 131744847e6fe8b4f912cf0ca7419159, type: 2}
+  m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1173085462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4515579140578112413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b44f5dd6a11d7e742a3a66d063cbbc60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_healthStatComponent: {fileID: 4525935328368511011}
+  m_deathEffects:
+  - {fileID: 11400000, guid: 2c2d16737cc719a4185076a9215ef4ed, type: 2}
+  - {fileID: 11400000, guid: fea987e77b8400341a9ed3fb5e234b57, type: 2}
 --- !u!114 &1758985040022984839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +251,7 @@ MonoBehaviour:
   m_damageEffects:
   - {fileID: 11400000, guid: 55acecf6c6226604c83eb182d36fce3c, type: 2}
   - {fileID: 11400000, guid: b34cd7f56fcac834a96c2a18d247c40d, type: 2}
+  - {fileID: 11400000, guid: 84f625159f8609d4ea5e0447ee376505, type: 2}
   m_regenAmount: 0.25
   m_regenAfterWaitTime: 3
 --- !u!114 &6237702773371368033
@@ -230,6 +275,7 @@ MonoBehaviour:
   m_damageEffects:
   - {fileID: 11400000, guid: 7a687a4ef7511344d9dc7c99fc139f90, type: 2}
   - {fileID: 11400000, guid: a37cc5049abdb8d4b9b7db9f37bacbc5, type: 2}
+  - {fileID: 11400000, guid: 84f625159f8609d4ea5e0447ee376505, type: 2}
   m_regenAmount: 0.5
   m_regenAfterWaitTime: 2
 --- !u!114 &6671281794781194806
