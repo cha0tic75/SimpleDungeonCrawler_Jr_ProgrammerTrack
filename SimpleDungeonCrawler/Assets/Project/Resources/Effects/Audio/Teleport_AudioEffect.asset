@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Teleport Audio Clip
   <AudioClip>k__BackingField: {fileID: 8300000, guid: 33b147dcfba661045a7d837ecdae3728, type: 3}
+  <AudioSourceType>k__BackingField: {fileID: 11400000, guid: e3be159a00cc98a4a8b4ba9d0441f534, type: 2}
   <Volume>k__BackingField: 0.7

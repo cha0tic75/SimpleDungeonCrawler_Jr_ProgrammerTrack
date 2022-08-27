@@ -1,9 +1,8 @@
 TODO:
-08/21/2022:
-    - Re apply the Damage Dealer to the Tilemap collider
+
     - We no longer want to have a die message. Instead, establish "Checkpoints" 
       based on the current area the player died, then spawn them at that checkpoint.
-
+    - Added DialogueSystem
 
     - Make a branch to change build to Android and implement Mobile controls.
     - Fix the GameCredit scene.  I would like it to fade out before cutting to MainMenu

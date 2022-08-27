@@ -25,6 +25,18 @@ namespace Project
 				yield return null;
 			}
 		}
+		public static IEnumerator LerpCanvasGroupAlpha(float _start, float _end, float _duration, CanvasGroup _canvasGroup)
+		{
+			_canvasGroup.alpha = _start;
+			float elapsedTime = 0f;
+			while (elapsedTime < _duration)
+			{
+				_canvasGroup.alpha = Mathf.Lerp(_start, _end, elapsedTime / _duration);
+				elapsedTime += Time.deltaTime;
+				yield return null;
+			}
+			_canvasGroup.alpha = _end;
+		}
 
 		public static void StopCoroutineIfRunning(ref Coroutine _coroutine, MonoBehaviour _monoBehaviour)
 		{

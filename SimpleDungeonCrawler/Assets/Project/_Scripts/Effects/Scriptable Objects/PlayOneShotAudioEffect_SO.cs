@@ -13,6 +13,7 @@ namespace Project.Effects
 	{
 		#region Inspector Assigned Field(s):
 		[field: SerializeField] public AudioClip AudioClip { get; private set; }
+		[field: SerializeField] public AudioSystem.AudioSourceType_SO AudioSourceType { get; private set; }
 		[field: SerializeField, Range(0f, 1f)] public float Volume { get; private set; }
 		#endregion
 
@@ -20,7 +21,7 @@ namespace Project.Effects
 		public override void PerformEffect(GameObject _gameObject)
 		{
 			if (AudioClip == null) { return; }
-			GameManagement.GameManager.Instance.AudioHandler.FXAudioSource.PlayOneShot(AudioClip, Volume);
+			GameManagement.GameManager.Instance.AudioHandler.GetAudioSource(AudioSourceType).PlayOneShot(AudioClip, Volume);
 		}
 		#endregion
 	}

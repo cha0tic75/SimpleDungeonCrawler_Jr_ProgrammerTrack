@@ -54,7 +54,6 @@ namespace Project.Actors.Stats
 			AlterCurrentValue(-_consumeAmount);
 			if (_consumeType == StatConsumeType.Damage)
 			{
-				Debug.Log($"Took {_consumeAmount} damage!");
 				m_damageEffects.ForEach(de => de.PerformEffect(gameObject));
 				OnTakeDamageEvent?.Invoke(_consumeAmount, this);
 			}
