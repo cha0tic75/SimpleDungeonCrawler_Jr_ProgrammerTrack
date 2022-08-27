@@ -13,20 +13,22 @@ namespace Project.UI
 		#region Inspector Assigned Field(s):
 		[SerializeField] private GameObject m_menuPanel;
 		[SerializeField] private GameObject m_infoPanel;
+		[SerializeField] private GameObject m_settingsPanel;
 		[SerializeField] private Effects.PlayOneShotAudioEffect_SO m_clickAudioEffect;
 		#endregion
 
 		#region MonoBehaviour Callback Method(s):
-		private void OnEnable() => SetMenuVisibilityState(true);
+		private void OnEnable() => ShowPanel(MenuPanel.MainMenu);
 		#endregion
 
-		#region Public API:
+		#region Public API - Button Callback(s):
 		public void OnButtonClicked() => m_clickAudioEffect.PerformEffect(null);
 		public void OnPlayButtonClicked() => 
 			GameManagement.GameManager.Instance.ChangeGameState(GameManagement.GameState.GamePlay);
 
-		public void OnInfoButtonClicked() => SetMenuVisibilityState(false);
-		public void OnBackButtonClicked() => SetMenuVisibilityState(true);
+		public void OnInfoButtonClicked() => ShowPanel(MenuPanel.Info);
+		public void OnSettingsButtonClicked() => ShowPanel(MenuPanel.Settings);
+		public void OnBackButtonClicked() => ShowPanel(MenuPanel.MainMenu);
 		public void OnExitButtonClicked()
 		{
 #if UNITY_EDITOR
@@ -36,12 +38,23 @@ namespace Project.UI
 		}
 		#endregion
 
+		#region Public API - Settings Callback(s):
+		#endregion
+
 		#region Internally Used Method(s):
-		private void SetMenuVisibilityState(bool _state)
+		private void ShowPanel(MenuPanel _panel)
 		{
-			m_menuPanel.SetActive(_state);
-			m_infoPanel.SetActive(!_state);
+			m_infoPanel.SetActive(_panel == MenuPanel.Info);
+			m_settingsPanel.SetActive(_panel == MenuPanel.Settings);
+			m_menuPanel.SetActive(_panel == MenuPanel.MainMenu);
 		}
 		#endregion
+
+		public enum MenuPanel
+		{
+			MainMenu, 
+			Settings, 
+			Info, 
+		}
 	}
 }
