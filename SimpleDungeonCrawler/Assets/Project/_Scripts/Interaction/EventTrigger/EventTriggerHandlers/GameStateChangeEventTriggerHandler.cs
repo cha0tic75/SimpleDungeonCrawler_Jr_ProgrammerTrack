@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Project.Interaction
 {
-    public class GameStateChangeEventTriggerHandler : EventTriggerHandler
+    public class GameStateChangeEventTriggerHandler : BaseEventTriggerHandler
     {
         #region 
         [SerializeField] private GameManagement.GameState m_newGameState;

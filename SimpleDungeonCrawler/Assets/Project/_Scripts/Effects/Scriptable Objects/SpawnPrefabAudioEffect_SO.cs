@@ -18,7 +18,8 @@ namespace Project.Effects
 		#region Public API:
 		public override void PerformEffect(GameObject _gameObject)
 		{
-			Instantiate(Prefab, _gameObject.transform.position, Quaternion.identity);
+			Transform transform = _gameObject.transform;
+			Instantiate(Prefab, transform.position, Quaternion.identity, transform);
 		}
 		#endregion
 	}

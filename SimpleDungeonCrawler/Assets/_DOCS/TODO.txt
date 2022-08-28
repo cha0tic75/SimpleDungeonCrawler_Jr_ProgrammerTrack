@@ -1,8 +1,14 @@
 TODO:
 
-    - We no longer want to have a die message. Instead, establish "Checkpoints" 
-      based on the current area the player died, then spawn them at that checkpoint.
-    - Added DialogueSystem
+    - Added DialogueSystem: So add some triggers to start some dialogue.  
+      IE: when a player comes to a door and doesnt have a key, "Something sort of funny"
+      or when they come across any new "mechanic" in the game.
+
+    - Add a Dash mechanic to the game that consumes stamina
+    - Change the end of game object to next level
+
+    - When player is hit, a "damage" text should be spawned, but it should be random
+      words like, "Ouch!"  "UGH!" "DOH!" "WTF!"
 
     - Make a branch to change build to Android and implement Mobile controls.
     - Fix the GameCredit scene.  I would like it to fade out before cutting to MainMenu

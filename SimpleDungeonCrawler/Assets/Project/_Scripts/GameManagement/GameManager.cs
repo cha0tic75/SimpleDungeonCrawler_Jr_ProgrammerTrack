@@ -14,6 +14,7 @@ namespace Project.GameManagement
 	{
 		#region Inspector Assigned Field(s):
 		[SerializeField] private GameState m_defaultGameState = GameState.MainMenu;
+		[field: SerializeField, ReadOnly] public GameState CurrentGameState { get; private set; } = GameState.Unset;
 		[field: SerializeField] public CameraSystem.CameraTools CameraTools { get; private set; }
 		[field: SerializeField] public AudioSystem.AudioHandler AudioHandler { get; private set; }
 		[field: SerializeField] public Effects.FadePanel FadePanel { get; private set; }
@@ -23,10 +24,6 @@ namespace Project.GameManagement
 
 		#region Internal State Field(s):
 		private Dictionary<GameState, BaseGameStateBehaviour> m_gameStateBehaviourDictionary;
-		#endregion
-		
-		#region Properties:
-		public GameState CurrentGameState { get; private set; }
 		#endregion
 
 		#region MonoBehaviour Callback Method(s):
@@ -54,16 +51,14 @@ namespace Project.GameManagement
 		{
 			m_gameStateBehaviourDictionary = new Dictionary<GameState, BaseGameStateBehaviour>()
 			{
-				{ GameState.MainMenu, new BasicLoadSceneGameStateBehaviour(SceneName.MainMenu, HideAllPopupPanels) }, 
-				{ GameState.GamePlay, new BasicLoadSceneGameStateBehaviour(SceneName.GameLevel, HideAllPopupPanels) }, 
-				{ GameState.Death, new BasicLoadSceneGameStateBehaviour(SceneName.GameLevel, HideAllPopupPanels) }, 
+				{ GameState.MainMenu, new BasicLoadSceneGameStateBehaviour(SceneName.MainMenu, HidePausePanel) }, 
+				{ GameState.GamePlay, new BasicLoadSceneGameStateBehaviour(SceneName.GameLevel, HidePausePanel) }, 
+				{ GameState.Death, new BasicLoadSceneGameStateBehaviour(SceneName.GameLevel, HidePausePanel, SwitchCurrentStateToGamePlay) }, 
 				// { GameState.Win, new CoroutineLoadSceneGameStateBehaviour(SceneName.Credits, m_winPanel) },
 			};
 
-			void HideAllPopupPanels()
-			{
-				m_pausePanel.SetActive(false);
-			}
+			void SwitchCurrentStateToGamePlay() => CurrentGameState = GameState.GamePlay;
+			void HidePausePanel() => m_pausePanel.SetActive(false);
 		}
 		#endregion
 	}

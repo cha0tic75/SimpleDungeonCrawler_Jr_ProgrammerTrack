@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Project.AudioSystem
 {
-    [CreateAssetMenu(menuName = "Audio/Audio SourceType")]
+    [CreateAssetMenu(menuName = "SO/Audio/Audio SourceType")]
 	public class AudioSourceType_SO : Base_SO
 	{
 		#region Inspector Assigned Field(s):

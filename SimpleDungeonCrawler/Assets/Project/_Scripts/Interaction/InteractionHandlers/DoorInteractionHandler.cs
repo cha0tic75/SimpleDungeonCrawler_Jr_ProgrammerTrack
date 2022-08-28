@@ -52,13 +52,13 @@ namespace Project.Interaction
 				}
 			}
 		}
-		#endregion
-
-        #region Internally Used Method(s):
-        private void SetExitState(bool _state)
+        public void SetExitState(bool _state)
 		{
 			m_animator.SetBool(s_isOpenedBoolAnimParam, _state);
 		}
+		#endregion
+
+        #region Internally Used Method(s):
 
 		private void SetSpriteRendererColor()
 		{

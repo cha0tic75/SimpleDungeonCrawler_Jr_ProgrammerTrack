@@ -30,8 +30,11 @@ namespace Project.Actors.Player
 		#region MonoBehaviour Callback Method(s):
 		private void Awake() => m_rigidbody = GetComponent<Rigidbody2D>();
 
-        private void Start() => 
-				GameManagement.GameManager.Instance.CameraTools.CameraFollow.SetTargetTransform(transform, true);
+        private void Start()
+		{
+			transform.position = GameManagement.LevelManager.Instance.CurrentSpawnPosition;
+			GameManagement.GameManager.Instance.CameraTools.CameraFollow.SetTargetTransform(transform, true);
+		}
 
 		private void FixedUpdate()
 		{

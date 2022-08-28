@@ -16,7 +16,7 @@ TagManager:
   - Interactable
   - DamageDealer
   - Player
-  - 
+  - LevelSection
   - 
   - 
   - 
@@ -49,6 +49,9 @@ TagManager:
     locked: 0
   - name: Walls
     uniqueID: 1132073057
+    locked: 0
+  - name: Emissive
+    uniqueID: 3952201937
     locked: 0
   - name: Top
     uniqueID: 506088781

@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Project.Interaction
 {
-    public class ArenaTimerEventTriggerHandler : EventTriggerHandler
+    public class ArenaTimerEventTriggerHandler : BaseEventTriggerHandler
 	{
 		#region Inspector Assigned Field(s):
 		[SerializeField] private float m_timeDelay = 5f;

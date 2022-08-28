@@ -8,7 +8,6 @@ using System.Collections.Generic;
 using Project.Actors.Player;
 using Project.Targeting;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace Project.Interaction
 {
@@ -17,7 +16,7 @@ namespace Project.Interaction
 	{
 		#region Inspector Assigned Field(s):
 		[SerializeField] private TargetAcquisitionType m_acquisitionType;
-		[SerializeField] private List<EventTriggerHandler> m_eventTriggerHandlers;
+		[SerializeField] private List<BaseEventTriggerHandler> m_eventTriggerHandlers;
 		#endregion
 
 		#region Internal State Field(s):
