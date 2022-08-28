@@ -15,10 +15,12 @@ namespace Project.UI
 		[SerializeField] private GameObject m_infoPanel;
 		[SerializeField] private GameObject m_settingsPanel;
 		[SerializeField] private Effects.PlayOneShotAudioEffect_SO m_clickAudioEffect;
+		[SerializeField] private AudioClip m_mainMenuAudioClip;
 		#endregion
 
 		#region MonoBehaviour Callback Method(s):
 		private void OnEnable() => ShowPanel(MenuPanel.MainMenu);
+		private void Start() => GameManagement.GameManager.Instance.AudioHandler.Play(m_mainMenuAudioClip);
 		#endregion
 
 		#region Public API - Button Callback(s):

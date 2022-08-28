@@ -21,7 +21,7 @@ namespace Project.Effects
 		public override void PerformEffect(GameObject _gameObject)
 		{
 			if (AudioClip == null) { return; }
-			GameManagement.GameManager.Instance.AudioHandler.GetAudioSource(AudioSourceType).PlayOneShot(AudioClip, Volume);
+			GameManagement.GameManager.Instance.AudioHandler.PlayOneShotAudio(AudioSourceType, AudioClip, Volume);
 		}
 		#endregion
 	}

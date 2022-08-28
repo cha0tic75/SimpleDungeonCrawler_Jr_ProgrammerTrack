@@ -177,6 +177,7 @@ MonoBehaviour:
   m_infoPanel: {fileID: 1843001717}
   m_settingsPanel: {fileID: 692564785}
   m_clickAudioEffect: {fileID: 11400000, guid: 94903a7e5b3041b4ebb5c22a95a8ff24, type: 2}
+  m_mainMenuAudioClip: {fileID: 8300000, guid: 7e7b10985f3a91f40a3380af0a3171d2, type: 3}
 --- !u!1 &105758234
 GameObject:
   m_ObjectHideFlags: 0

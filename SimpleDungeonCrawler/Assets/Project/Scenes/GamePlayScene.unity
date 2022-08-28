@@ -167,3 +167,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9f52dc21a731b64b96ec62bbce2cad9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_gamePlayAudio: {fileID: 8300000, guid: 75c7c98c895178848a1d8597c4ccc7aa, type: 3}

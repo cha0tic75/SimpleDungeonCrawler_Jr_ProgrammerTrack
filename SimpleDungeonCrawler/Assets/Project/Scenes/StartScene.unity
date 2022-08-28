@@ -386,11 +386,6 @@ MonoBehaviour:
   m_dialogStrings:
   - This is a test of the emergency broadcast system!
   - The viewers in your area are really pissed at you
---- !u!82 &293290606 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1511749324802038971, guid: 84104a004e2092c4e8bdd2fae7ee7d4f, type: 3}
-  m_PrefabInstance: {fileID: 2689644976607556653}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &319479386
 GameObject:
   m_ObjectHideFlags: 0
@@ -628,11 +623,6 @@ MonoBehaviour:
   m_TrackedDeviceOrientationAction: {fileID: 7970375526676320489, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
---- !u!82 &916284580 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 9161763153020021525, guid: 84104a004e2092c4e8bdd2fae7ee7d4f, type: 3}
-  m_PrefabInstance: {fileID: 2689644976607556653}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1263567719
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,29 +1177,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6922448667767792704, guid: 84104a004e2092c4e8bdd2fae7ee7d4f, type: 3}
-      propertyPath: m_audioSourceDatas.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6922448667767792704, guid: 84104a004e2092c4e8bdd2fae7ee7d4f, type: 3}
-      propertyPath: m_audioSourceDatas.Array.data[0].<Source>k__BackingField
-      value: 
-      objectReference: {fileID: 916284580}
-    - target: {fileID: 6922448667767792704, guid: 84104a004e2092c4e8bdd2fae7ee7d4f, type: 3}
-      propertyPath: m_audioSourceDatas.Array.data[1].<Source>k__BackingField
-      value: 
-      objectReference: {fileID: 293290606}
-    - target: {fileID: 6922448667767792704, guid: 84104a004e2092c4e8bdd2fae7ee7d4f, type: 3}
       propertyPath: m_audioSourceDatas.Array.data[2].<Source>k__BackingField
       value: 
       objectReference: {fileID: 1825231221}
-    - target: {fileID: 6922448667767792704, guid: 84104a004e2092c4e8bdd2fae7ee7d4f, type: 3}
-      propertyPath: m_audioSourceDatas.Array.data[0].<AudioSourceType>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: bf0d2101d90ebdd4691ce79e64d9c993, type: 2}
-    - target: {fileID: 6922448667767792704, guid: 84104a004e2092c4e8bdd2fae7ee7d4f, type: 3}
-      propertyPath: m_audioSourceDatas.Array.data[1].<AudioSourceType>k__BackingField
-      value: 
-      objectReference: {fileID: 11400000, guid: e3be159a00cc98a4a8b4ba9d0441f534, type: 2}
     - target: {fileID: 6922448667767792704, guid: 84104a004e2092c4e8bdd2fae7ee7d4f, type: 3}
       propertyPath: m_audioSourceDatas.Array.data[2].<AudioSourceType>k__BackingField
       value: 
@@ -1224,14 +1194,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9161763153020021525, guid: 84104a004e2092c4e8bdd2fae7ee7d4f, type: 3}
       propertyPath: Loop
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9161763153020021525, guid: 84104a004e2092c4e8bdd2fae7ee7d4f, type: 3}
-      propertyPath: m_audioClip
-      value: 
-      objectReference: {fileID: 8300000, guid: f5abb71fc103ebb47be3ba403adb0b89, type: 3}
-    - target: {fileID: 9161763153020021525, guid: 84104a004e2092c4e8bdd2fae7ee7d4f, type: 3}
-      propertyPath: m_PlayOnAwake
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
