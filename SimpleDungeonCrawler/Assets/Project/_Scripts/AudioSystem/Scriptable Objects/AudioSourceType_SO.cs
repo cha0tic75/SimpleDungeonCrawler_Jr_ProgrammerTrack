@@ -13,6 +13,7 @@ namespace Project.AudioSystem
 	{
 		#region Inspector Assigned Field(s):
 		[field: SerializeField, Range(0f, 1f)] public float DefaultVolume { get; private set; } = 1f;
+		[field: SerializeField] public string MixerParam { get; private set; }
 		#endregion
 	}
 }

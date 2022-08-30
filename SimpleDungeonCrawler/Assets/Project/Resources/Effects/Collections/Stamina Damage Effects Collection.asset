@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14668c86cd7595547bb625eda9c5a352, type: 3}
+  m_Name: Stamina Damage Effects Collection
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Stamina Damage Effects Collection
+  m_damageEffects:
+  - {fileID: 11400000, guid: 84f625159f8609d4ea5e0447ee376505, type: 2}
+  - {fileID: 11400000, guid: f0b73de55845d2a4da88b14cc23a63f5, type: 2}
+  - {fileID: 11400000, guid: a37cc5049abdb8d4b9b7db9f37bacbc5, type: 2}
+  - {fileID: 11400000, guid: 7a687a4ef7511344d9dc7c99fc139f90, type: 2}

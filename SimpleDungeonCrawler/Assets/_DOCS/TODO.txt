@@ -1,7 +1,11 @@
 TODO:
 
-    - Change the Settings page in menu so that it adjusts the mixer volume and not the AudioSource volume
-    - Create an Object Pooler system for Particles and DamageText
+    - Make sure the other Level scenes are using the new "Collider Notifier system" for damage walls
+    - Some systems could share the same handlers.  IE: EventTrigger and Interactable
+      Think of a way that they can share the behaviour!
+      Perhaps a BaseHandler class that all Handlers can implement?
+
+    - Test the LoadNextLevel gamestate
 
     - Added DialogueSystem: So add some triggers to start some dialogue.  
       IE: when a player comes to a door and doesnt have a key, "Something sort of funny"

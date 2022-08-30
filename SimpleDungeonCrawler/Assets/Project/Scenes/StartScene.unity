@@ -210,6 +210,7 @@ Transform:
   - {fileID: 801585925}
   - {fileID: 275980389}
   - {fileID: 362463204}
+  - {fileID: 1427119128}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -227,10 +228,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_defaultGameState: 1
   <CurrentGameState>k__BackingField: 0
-  <CameraTools>k__BackingField: {fileID: 4625594154177743938}
+  <CameraTools>k__BackingField: {fileID: 4625594154177743941}
   <AudioHandler>k__BackingField: {fileID: 2689644976607556654}
   <FadePanel>k__BackingField: {fileID: 151493887}
   <DialogManager>k__BackingField: {fileID: 151493886}
+  <PrefabObjectPooler>k__BackingField: {fileID: 1427119129}
   m_pausePanel: {fileID: 744652563}
 --- !u!114 &151493886
 MonoBehaviour:
@@ -887,6 +889,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1265877000}
   m_CullTransparentMesh: 1
+--- !u!1 &1427119127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1427119128}
+  - component: {fileID: 1427119129}
+  m_Layer: 0
+  m_Name: PrefabObjectPooler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1427119128
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427119127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 151493884}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1427119129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1427119127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d948b2735141447a8ae6229fa73291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!20 &1428794134 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 4625594155412583749, guid: 151ba0c98783aa743b362e15242edde8, type: 3}
+  m_PrefabInstance: {fileID: 4625594154177743937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1436530485
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,6 +988,16 @@ CanvasGroup:
   m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!1 &1458398650 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4625594154729249786, guid: 151ba0c98783aa743b362e15242edde8, type: 3}
+  m_PrefabInstance: {fileID: 4625594154177743937}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1513535044 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4625594154658039281, guid: 151ba0c98783aa743b362e15242edde8, type: 3}
+  m_PrefabInstance: {fileID: 4625594154177743937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1629607868 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4625594154729249789, guid: 151ba0c98783aa743b362e15242edde8, type: 3}
@@ -1177,6 +1238,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6922448667767792704, guid: 84104a004e2092c4e8bdd2fae7ee7d4f, type: 3}
+      propertyPath: m_audioMixer
+      value: 
+      objectReference: {fileID: 24100000, guid: b4f74b2944bd9e7428003dce98d0ed29, type: 2}
+    - target: {fileID: 6922448667767792704, guid: 84104a004e2092c4e8bdd2fae7ee7d4f, type: 3}
       propertyPath: m_audioSourceDatas.Array.data[2].<Source>k__BackingField
       value: 
       objectReference: {fileID: 1825231221}
@@ -1221,6 +1286,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 151493884}
     m_Modifications:
+    - target: {fileID: 1636218139327453066, guid: 151ba0c98783aa743b362e15242edde8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4625594154729249786, guid: 151ba0c98783aa743b362e15242edde8, type: 3}
       propertyPath: m_Name
       value: CameraSystem
@@ -1289,16 +1358,43 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5417343590416043555, guid: 151ba0c98783aa743b362e15242edde8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7868464631305853857, guid: 151ba0c98783aa743b362e15242edde8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8634109799345692821, guid: 151ba0c98783aa743b362e15242edde8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 151ba0c98783aa743b362e15242edde8, type: 3}
---- !u!114 &4625594154177743938 stripped
+--- !u!114 &4625594154177743941
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7868464631305853857, guid: 151ba0c98783aa743b362e15242edde8, type: 3}
-  m_PrefabInstance: {fileID: 4625594154177743937}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1458398650}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58879de597c9d374dafd9edbe23043f2, type: 3}
+  m_Script: {fileID: 11500000, guid: 616f2ec40717185488a298d8e4eb4c61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <MainCamera>k__BackingField: {fileID: 1428794134}
+  <FollowTransform>k__BackingField: {fileID: 1629607868}
+  <ShakeTransform>k__BackingField: {fileID: 1513535044}
+  <CameraShaker>k__BackingField:
+    m_defaultDuration: 0.1
+    m_defaultMagnitude: 0.1
+    m_axisRange: 0.25
+  <CameraFollow>k__BackingField:
+    m_targetTransform: {fileID: 0}
+    m_smoothness: 10
+  <CameraZoom>k__BackingField:
+    m_defaultDuration: 0.1
+    m_defaultZoomValue: 1.92
+    m_defaultDelayBetween: 0.15

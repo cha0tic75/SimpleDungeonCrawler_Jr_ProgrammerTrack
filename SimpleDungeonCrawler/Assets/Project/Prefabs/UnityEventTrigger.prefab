@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 8674892152902860922}
   - component: {fileID: 4887258205383361484}
-  - component: {fileID: 5385960320377865693}
-  - component: {fileID: 5605751096882080250}
   - component: {fileID: 3519813528475045418}
+  - component: {fileID: 440014261301803109}
+  - component: {fileID: 950911909747945139}
   m_Layer: 11
   m_Name: UnityEventTrigger
   m_TagString: Untagged
@@ -61,33 +61,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3, y: 3}
   m_EdgeRadius: 0
---- !u!114 &5385960320377865693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 850013276560695327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba8d700283ccd4742a7903e0b0be7be3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &5605751096882080250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 850013276560695327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbf4f30950c133646b455d728852ba08, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_acquisitionType: 1
-  m_eventTriggerHandlers:
-  - {fileID: 3519813528475045418}
 --- !u!114 &3519813528475045418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,6 +73,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: daf6712f3915552408ff81a8c512f085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_acquisitionType: 1
   m_event:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &440014261301803109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850013276560695327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2a5ff1b589406b4d90f1d2c7f36c4f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_collisionAcquisitionType: -1
+--- !u!114 &950911909747945139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850013276560695327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73c3023cbdaf3e2449b5e4afb4c8d6c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_acquisitionType: 1
+  m_colliderNotifier: {fileID: 440014261301803109}
+  m_eventTriggerHandlers:
+  - {fileID: 3519813528475045418}

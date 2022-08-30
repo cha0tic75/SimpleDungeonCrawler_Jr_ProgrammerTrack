@@ -12,7 +12,7 @@ namespace Project.GameManagement
 		MainMenu, 
 		GamePlay, 
 		Pause, 
-		Death,
-		Win, 
+		ReloadCurrentLevel,
+		loadNextLevel, 
 	}
 }

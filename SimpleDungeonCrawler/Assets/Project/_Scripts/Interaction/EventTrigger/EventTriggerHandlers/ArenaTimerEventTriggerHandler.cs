@@ -14,7 +14,7 @@ namespace Project.Interaction
 	{
 		#region Inspector Assigned Field(s):
 		[SerializeField] private float m_timeDelay = 5f;
-		[SerializeField] private Effects.SpawnPrefabAudioEffect_SO m_spawnPrefabEffect;
+		[SerializeField] private GameObject m_keyPrefab;
 		[SerializeField] private List<Transform> m_dropPoints;
 		#endregion
 
@@ -29,7 +29,7 @@ namespace Project.Interaction
 
 			Transform rndTransform = m_dropPoints[UnityEngine.Random.Range(0, m_dropPoints.Count)];
 
-			m_spawnPrefabEffect.PerformEffect(rndTransform.gameObject);
+			Instantiate(m_keyPrefab, rndTransform.position, Quaternion.identity);
 
 			Destroy(gameObject);
 		}

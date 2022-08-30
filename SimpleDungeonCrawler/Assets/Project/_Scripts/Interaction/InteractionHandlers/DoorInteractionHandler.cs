@@ -52,6 +52,7 @@ namespace Project.Interaction
 				}
 			}
 		}
+
         public void SetExitState(bool _state)
 		{
 			m_animator.SetBool(s_isOpenedBoolAnimParam, _state);

@@ -186,8 +186,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_healthStatComponent: {fileID: 4525935328368511011}
   m_deathEffects:
-  - {fileID: 11400000, guid: 2c2d16737cc719a4185076a9215ef4ed, type: 2}
-  - {fileID: 11400000, guid: fea987e77b8400341a9ed3fb5e234b57, type: 2}
+  - {fileID: 11400000, guid: 371a5950320f4cb48bda3f3c2648da27, type: 2}
+  - {fileID: 11400000, guid: c282d3a88e81e094ab1d53f5b8c04df6, type: 2}
 --- !u!114 &1758985040022984839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,8 +250,9 @@ MonoBehaviour:
   m_statMeter: {fileID: 0}
   m_damageEffects:
   - {fileID: 11400000, guid: 55acecf6c6226604c83eb182d36fce3c, type: 2}
-  - {fileID: 11400000, guid: b34cd7f56fcac834a96c2a18d247c40d, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: 84f625159f8609d4ea5e0447ee376505, type: 2}
+  - {fileID: 0}
   m_regenAmount: 0.25
   m_regenAfterWaitTime: 3
 --- !u!114 &6237702773371368033
@@ -274,8 +275,9 @@ MonoBehaviour:
   m_statMeter: {fileID: 0}
   m_damageEffects:
   - {fileID: 11400000, guid: 7a687a4ef7511344d9dc7c99fc139f90, type: 2}
-  - {fileID: 11400000, guid: a37cc5049abdb8d4b9b7db9f37bacbc5, type: 2}
+  - {fileID: 0}
   - {fileID: 11400000, guid: 84f625159f8609d4ea5e0447ee376505, type: 2}
+  - {fileID: 0}
   m_regenAmount: 0.5
   m_regenAfterWaitTime: 2
 --- !u!114 &6671281794781194806

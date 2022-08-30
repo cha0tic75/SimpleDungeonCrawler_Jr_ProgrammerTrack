@@ -31,16 +31,16 @@ namespace Project.Damage
         #endregion
  
         #region Internally Used Method(s):
-        protected override void DealDamage(List<IDamagable> _damagables, Targeting.TargetAcquisitionType _acquisitionType)
+        protected override void DealDamage(IDamagable _damagable, CollisionAcquisitionType _acquisitionType)
         {
             switch(_acquisitionType)
             {
-                case Targeting.TargetAcquisitionType.OnEnter:
-                    HandleOnEnter(_damagables);
+                case CollisionAcquisitionType.OnEnter:
+                    HandleOnEnter(_damagable);
                     break;
                 
-                case Targeting.TargetAcquisitionType.OnExit:
-                    HandleOnExit(_damagables);
+                case CollisionAcquisitionType.OnExit:
+                    HandleOnExit(_damagable);
                     break;
                 
                 default:
@@ -48,28 +48,26 @@ namespace Project.Damage
             }
         }
 
-        private void HandleOnEnter(List<IDamagable> _damagables)
+        private void HandleOnEnter(IDamagable _damagable)
         {
-            foreach (var damagable in _damagables)
+            Debug.Log($"StayDamageDealerHandler: Recieved notification of an IDamagable entering");
+            if (!m_currentDamagables.Contains(_damagable))
             {
-                if (!m_currentDamagables.Contains(damagable))
-                {
-                    m_currentDamagables.Add(damagable);
-                }
+                m_currentDamagables.Add(_damagable);
             }
 
             if (m_currentDamagables.Count > 0 && m_damageCoroutine == null)
             {
                 m_damageCoroutine = StartCoroutine(DealDamageOverTimeCoroutine());
             }
-
         }
 
-        private void HandleOnExit(List<IDamagable> _damagables)
+        private void HandleOnExit(IDamagable _damagable)
         {
-            _damagables.ForEach(d => m_currentDamagables.Remove(d));
+            Debug.Log($"StayDamageDealerHandler: Recieved notification of an IDamagable exiting");
+            m_currentDamagables.Remove(_damagable);
 
-            if (_damagables.Count == 0)
+            if (m_currentDamagables.Count == 0)
             {
                 HelperMethods.StopCoroutineIfRunning(ref m_damageCoroutine, this);
             }
@@ -84,7 +82,12 @@ namespace Project.Damage
                 List<IDamagable> currentDamagables = m_currentDamagables.ToList();
                 foreach (var damagable in currentDamagables)
                 {
-                    damagable.Consume(m_damageRange.GetRandomValueInRange(), Actors.Stats.StatConsumeType.Damage);
+                    float rndDamage = m_damageRange.GetRandomValueInRange();
+                    if (rndDamage > 0f)
+                    {
+                        damagable.Consume(rndDamage, Actors.Stats.StatConsumeType.Damage);
+                    }
+
                     yield return null;
                 }
 

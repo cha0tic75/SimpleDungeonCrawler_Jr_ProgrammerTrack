@@ -7,27 +7,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using Project.Actors.Stats;
-using Project.Targeting;
 using UnityEngine;
 
 namespace Project.Damage
 {
-
-    [RequireComponent(typeof(Targeting.BaseTargetProvider<Actors.Stats.IDamagable>))]
     public class DamageDealer : MonoBehaviour
-	{
+    {
         #region Inspector Assigned Field(s):
+        [SerializeField] private BaseColliderNotifier m_baseColliderNotifier;
         [SerializeField] private List<BaseDamageDealerHandler> m_damageDealerHandlers;
         #endregion
 
         #region Internal State Field(s):
-        private Targeting.BaseTargetProvider<Actors.Stats.IDamagable> m_targetProvider;
         #endregion
 
         #region MonoBehaviour(s):
         private void Awake()
         {
-            m_targetProvider = GetComponent<Targeting.BaseTargetProvider<Actors.Stats.IDamagable>>();
             if (m_damageDealerHandlers == null || m_damageDealerHandlers.Count == 0)
             {
                 m_damageDealerHandlers = GetComponents<BaseDamageDealerHandler>().ToList();
@@ -35,23 +31,35 @@ namespace Project.Damage
         }
         private void OnEnable()
         {
-            m_targetProvider.OnTargetedEvent += TargetProvider_OnTargetedCallback;
+            m_baseColliderNotifier.OnEnterEvent += ColliderNotifier_OnEnterCallback;
+            m_baseColliderNotifier.OnExitEvent += ColliderNotifier_OnExitCallback;
         }
 
         private void OnDisable()
         {
-            if (m_targetProvider == null) { return; }
+            if (m_baseColliderNotifier == null) { return; }
             
-            m_targetProvider.OnTargetedEvent -= TargetProvider_OnTargetedCallback;
+            m_baseColliderNotifier.OnEnterEvent -= ColliderNotifier_OnEnterCallback;
+            m_baseColliderNotifier.OnExitEvent -= ColliderNotifier_OnExitCallback;
         }
         #endregion
 
         #region Callback(s):
-        private void TargetProvider_OnTargetedCallback(IDamagable[] _damagables, TargetAcquisitionType _acquisitionType)
+        private void ColliderNotifier_OnEnterCallback(Collider2D _collider)
         {
-            List<Actors.Stats.IDamagable> damagables = _damagables.ToList();
-            m_damageDealerHandlers.ForEach(dh => dh.HandleDamage(damagables, _acquisitionType));
+            if (_collider.TryGetComponent<IDamagable>(out var damagable))
+            {
+                m_damageDealerHandlers.ForEach(dh => dh.HandleDamage(damagable, CollisionAcquisitionType.OnEnter));
+            }
+        }
+
+        private void ColliderNotifier_OnExitCallback(Collider2D _collider)
+        {
+            if (_collider.TryGetComponent<IDamagable>(out var damagable))
+            {
+                m_damageDealerHandlers.ForEach(dh => dh.HandleDamage(damagable, CollisionAcquisitionType.OnExit));
+            }
         }
         #endregion
-    }
+    } 
 }

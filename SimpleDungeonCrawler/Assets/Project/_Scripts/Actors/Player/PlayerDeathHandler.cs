@@ -41,7 +41,7 @@ namespace Project.Actors.Player
         private void HandleDeath()
         {
             m_deathEffects.ForEach(de => de.PerformEffect(gameObject));
-            GameManagement.GameManager.Instance.ChangeGameState(GameManagement.GameState.Death);
+            GameManagement.GameManager.Instance.ChangeGameState(GameManagement.GameState.ReloadCurrentLevel);
             gameObject.SetActive(false);
         }
 		#endregion

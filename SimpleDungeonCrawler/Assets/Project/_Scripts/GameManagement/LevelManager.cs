@@ -30,10 +30,9 @@ namespace Project.GameManagement
 			UnityEngine.SceneManagement.SceneManager.LoadScene((int)CurrentGameLevel + GAME_LEVEL_SCENE_INDEX_OFFSET);
 			SetLevelSectionCheckpoint(m_defaultSpawnPoint);
 		}
-		public void LoadNextLevel()
+		public void UpdateLevelToNext()
 		{
 			CurrentGameLevel = CurrentGameLevel + 1;
-			LoadCurrentLevel();
 		}
 		#endregion
 	}

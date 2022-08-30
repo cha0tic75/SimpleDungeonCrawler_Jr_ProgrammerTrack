@@ -236,7 +236,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8673874938470779024, guid: 3a2b5ed541e0618479702a02683fcaad, type: 3}
   m_PrefabInstance: {fileID: 843437004628570667}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3116199551813207660
+--- !u!114 &2193962179788041771
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -245,12 +245,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8352970252488342203}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc15dd5792ff8944bae8658751311c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 83cd71d0abc0e5a429b14c4f13f2225f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_damageDealerHandlers:
-  - {fileID: 6170016838217823855}
---- !u!114 &3116199551813207661
+  m_collisionAcquisitionType: -1
+--- !u!114 &2780866006094263593
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -259,28 +258,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 8352970252488342203}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb01297dbb11666469ce83de150aaec5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &6170016838217823855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8352970252488342203}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7673413b67b15948af2378accda4a46, type: 3}
+  m_Script: {fileID: 11500000, guid: ac3a66d57e3dc604cb9dff189e746eca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_statType: {fileID: 11400000, guid: 47bd44e619c117943a7ddcee50e945fe, type: 2}
-  m_acquisitionType: 3
+  m_acquisitionType: -1
   m_damageRange:
-    <Min>k__BackingField: 1
+    <Min>k__BackingField: 0
     <Max>k__BackingField: 1
   m_damageEffects: []
-  m_damageFrequency: 1
+  m_damageFrequency: 0.85
+--- !u!114 &5947882651708332753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8352970252488342203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bcf2864b96e7bf4f92e2d3da30a982b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_baseColliderNotifier: {fileID: 2193962179788041771}
+  m_damageDealerHandlers:
+  - {fileID: 2780866006094263593}
 --- !u!1001 &4387488287804266255
 PrefabInstance:
   m_ObjectHideFlags: 0

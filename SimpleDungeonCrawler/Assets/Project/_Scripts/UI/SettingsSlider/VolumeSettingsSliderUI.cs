@@ -21,13 +21,17 @@ namespace Project.UI
 
 		#region MonoBehaviour Callback Method(s):
 		private void Awake() => m_settingsSliderUI = GetComponent<SettingsSliderUI>();
+		private void OnEnable()
+		{
+			m_settingsSliderUI.Slider.value = GameManagement.GameManager.Instance.AudioHandler.GetMixerVolume(AudioSourceType.MixerParam);
+		}
 		private void Start() => SetCurrentValues();
         #endregion
 
         #region Public API
         public void OnValueChanged(float _value)
 		{
-			GameManagement.GameManager.Instance.AudioHandler.GetAudioSource(AudioSourceType).volume = _value;
+			GameManagement.GameManager.Instance.AudioHandler.SetMixerVolume(AudioSourceType.MixerParam, _value);
 			FormatValue(_value);
 		}
 		#endregion
@@ -35,14 +39,14 @@ namespace Project.UI
 		#region Internally Used Method(s):
         private void SetCurrentValues()
         {
-            float currentVolume = GameManagement.GameManager.Instance.AudioHandler.GetAudioSource(AudioSourceType).volume;
-            m_settingsSliderUI.Slider.value = currentVolume;
+			float currentValue = GameManagement.GameManager.Instance.AudioHandler.GetMixerVolume(AudioSourceType.MixerParam);
+            m_settingsSliderUI.Slider.value = currentValue;
             m_settingsSliderUI.CaptionTMP.text = m_settingsSliderUI.Caption;
-            FormatValue(currentVolume);
+            FormatValue(currentValue);
         }
 		private void FormatValue(float _value)
 		{
-			float displayValue = 10 * _value;
+			float displayValue = _value;
 			m_settingsSliderUI.ValueTMP.text = displayValue.ToString("F1");
 		}
 		#endregion

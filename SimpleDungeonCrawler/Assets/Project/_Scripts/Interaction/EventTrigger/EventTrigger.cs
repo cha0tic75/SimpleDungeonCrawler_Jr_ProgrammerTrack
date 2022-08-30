@@ -5,49 +5,60 @@
 // ######################################################################
 
 using System.Collections.Generic;
-using Project.Actors.Player;
-using Project.Targeting;
 using UnityEngine;
 
 namespace Project.Interaction
 {
-    [RequireComponent(typeof(Targeting.BaseTargetProvider<Actors.Player.PlayerMotor>))]
-	public class EventTrigger : MonoBehaviour
+    public class EventTrigger : MonoBehaviour
 	{
 		#region Inspector Assigned Field(s):
-		[SerializeField] private TargetAcquisitionType m_acquisitionType;
+		[SerializeField] private CollisionAcquisitionType m_acquisitionType;
+		[SerializeField] private BaseColliderNotifier m_colliderNotifier;
 		[SerializeField] private List<BaseEventTriggerHandler> m_eventTriggerHandlers;
 		#endregion
 
-		#region Internal State Field(s):
-		private Targeting.BaseTargetProvider<Actors.Player.PlayerMotor> m_eventTriggerTargetProvider;
-		#endregion
-
 		#region MonoBehaviour Callback Method(s):
-		private void Awake() => 
-				m_eventTriggerTargetProvider = GetComponent<Targeting.BaseTargetProvider<Actors.Player.PlayerMotor>>();
-
-		private void OnEnable() => 
-				m_eventTriggerTargetProvider.OnTargetedEvent += EventTriggerTargetProvider_OnTargetedCallback;
+		private void OnEnable()
+		{
+			if (m_acquisitionType.HasFlag(CollisionAcquisitionType.OnEnter))
+			{
+				m_colliderNotifier.OnEnterEvent += CollisionNotifier_OnEnterCallback;
+			}
+			if (m_acquisitionType.HasFlag(CollisionAcquisitionType.OnExit))
+			{
+				m_colliderNotifier.OnExitEvent += CollisionNotifier_OnExitCallback;
+			}
+		}
 
 		private void OnDisable()
 		{
-			if (m_eventTriggerTargetProvider == null) { return; }
-			m_eventTriggerTargetProvider.OnTargetedEvent += EventTriggerTargetProvider_OnTargetedCallback;
+			if (m_acquisitionType.HasFlag(CollisionAcquisitionType.OnEnter))
+			{
+				m_colliderNotifier.OnEnterEvent -= CollisionNotifier_OnEnterCallback;
+			}
+			if (m_acquisitionType.HasFlag(CollisionAcquisitionType.OnExit))
+			{
+				m_colliderNotifier.OnExitEvent -= CollisionNotifier_OnExitCallback;
+			}
 		}
 		#endregion
 
 		#region Callback(s):
-        private void EventTriggerTargetProvider_OnTargetedCallback(PlayerMotor[] _playerMotors, TargetAcquisitionType _targetAcquisitionType)
-		{
-			if (_playerMotors == null || _playerMotors.Length == 0) { return; }
-			if (_targetAcquisitionType != m_acquisitionType) { return; }
-
-			foreach (var eventTriggerHandler in m_eventTriggerHandlers)
+        private void CollisionNotifier_OnEnterCallback(Collider2D _collider)
+        {
+			if (_collider.TryGetComponent<Actors.Player.PlayerMotor>(out var playerMotor))
 			{
-				eventTriggerHandler.Handle();
+				m_eventTriggerHandlers.ForEach(eth => eth.HandleEventTrigger(CollisionAcquisitionType.OnEnter));
 			}
-		} 
-		#endregion
-	}
+        }
+
+        private void CollisionNotifier_OnExitCallback(Collider2D _collider)
+        {
+ 			if (_collider.TryGetComponent<Actors.Player.PlayerMotor>(out var playerMotor))
+			{
+				m_eventTriggerHandlers.ForEach(eth => eth.HandleEventTrigger(CollisionAcquisitionType.OnExit));
+			}
+        }
+        #endregion
+    }
 }

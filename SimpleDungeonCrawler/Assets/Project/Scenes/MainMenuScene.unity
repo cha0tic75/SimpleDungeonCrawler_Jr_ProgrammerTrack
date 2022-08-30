@@ -948,7 +948,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &692564786
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2095,8 +2095,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: e3be159a00cc98a4a8b4ba9d0441f534, type: 2}
     - target: {fileID: 2641943092162442360, guid: 576951591418ce1498ac35705e464e53, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2641943092162442360, guid: 576951591418ce1498ac35705e464e53, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3235657096427163878, guid: 576951591418ce1498ac35705e464e53, type: 3}
       propertyPath: m_Name
@@ -2111,8 +2115,16 @@ PrefabInstance:
       value: fx sound volume
       objectReference: {fileID: 0}
     - target: {fileID: 8559192834068775487, guid: 576951591418ce1498ac35705e464e53, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559192834068775487, guid: 576951591418ce1498ac35705e464e53, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559192834068775487, guid: 576951591418ce1498ac35705e464e53, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 576951591418ce1498ac35705e464e53, type: 3}
@@ -3354,14 +3366,22 @@ PrefabInstance:
     - target: {fileID: 2504014645017394365, guid: 576951591418ce1498ac35705e464e53, type: 3}
       propertyPath: <AudioSourceType>k__BackingField
       value: 
-      objectReference: {fileID: 11400000, guid: bf0d2101d90ebdd4691ce79e64d9c993, type: 2}
+      objectReference: {fileID: 11400000, guid: e7e1b918f8fd15b42888e08cca14a610, type: 2}
+    - target: {fileID: 2641943092162442360, guid: 576951591418ce1498ac35705e464e53, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2641943092162442360, guid: 576951591418ce1498ac35705e464e53, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3235657096427163878, guid: 576951591418ce1498ac35705e464e53, type: 3}
       propertyPath: m_Name
       value: Music_VolumeSettingsSlider
+      objectReference: {fileID: 0}
+    - target: {fileID: 4597370575717799165, guid: 576951591418ce1498ac35705e464e53, type: 3}
+      propertyPath: m_MinValue
+      value: 0.0001
       objectReference: {fileID: 0}
     - target: {fileID: 5214544701859550504, guid: 576951591418ce1498ac35705e464e53, type: 3}
       propertyPath: <Caption>k__BackingField
@@ -3372,8 +3392,16 @@ PrefabInstance:
       value: background music volume
       objectReference: {fileID: 0}
     - target: {fileID: 8559192834068775487, guid: 576951591418ce1498ac35705e464e53, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559192834068775487, guid: 576951591418ce1498ac35705e464e53, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8559192834068775487, guid: 576951591418ce1498ac35705e464e53, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 576951591418ce1498ac35705e464e53, type: 3}
