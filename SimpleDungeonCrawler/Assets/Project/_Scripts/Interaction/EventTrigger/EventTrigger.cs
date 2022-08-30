@@ -43,22 +43,27 @@ namespace Project.Interaction
 		}
 		#endregion
 
-		#region Callback(s):
-        private void CollisionNotifier_OnEnterCallback(Collider2D _collider)
-        {
+		#region Internally Used Method(s):
+		protected virtual void HandleOnEnter(Collider2D _collider)
+		{
 			if (_collider.TryGetComponent<Actors.Player.PlayerMotor>(out var playerMotor))
 			{
 				m_eventTriggerHandlers.ForEach(eth => eth.HandleEventTrigger(CollisionAcquisitionType.OnEnter));
 			}
-        }
-
-        private void CollisionNotifier_OnExitCallback(Collider2D _collider)
-        {
+		}
+		protected virtual void HandleOnExit(Collider2D _collider)
+		{
  			if (_collider.TryGetComponent<Actors.Player.PlayerMotor>(out var playerMotor))
 			{
 				m_eventTriggerHandlers.ForEach(eth => eth.HandleEventTrigger(CollisionAcquisitionType.OnExit));
 			}
-        }
+		}
+		#endregion
+
+		#region Callback(s):
+        private void CollisionNotifier_OnEnterCallback(Collider2D _collider) => HandleOnEnter(_collider);
+
+        private void CollisionNotifier_OnExitCallback(Collider2D _collider) => HandleOnExit(_collider);
         #endregion
     }
 }

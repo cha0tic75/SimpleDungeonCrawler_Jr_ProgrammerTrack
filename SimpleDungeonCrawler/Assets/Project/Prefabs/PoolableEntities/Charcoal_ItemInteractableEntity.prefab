@@ -7,6 +7,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 965948172703429088, guid: 859e31cdf497ee9479b8724279bb81ab, type: 3}
+      propertyPath: m_dialogTexts.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 965948172703429088, guid: 859e31cdf497ee9479b8724279bb81ab, type: 3}
+      propertyPath: m_dialogTexts.Array.data[0]
+      value: Yey! The charcoal key! Time to unlock the Charcoal door!
+      objectReference: {fileID: 0}
     - target: {fileID: 5617106492048915617, guid: 859e31cdf497ee9479b8724279bb81ab, type: 3}
       propertyPath: m_Name
       value: Charcoal_ItemInteractableEntity

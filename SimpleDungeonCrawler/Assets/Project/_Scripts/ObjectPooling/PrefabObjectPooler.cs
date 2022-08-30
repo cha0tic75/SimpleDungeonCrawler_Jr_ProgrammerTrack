@@ -16,7 +16,11 @@ namespace Project.ObjectPooling
 		#endregion
 
 		#region Public API:
-		public void CheckIn(PoolableEntity _obj) => _obj.gameObject.SetActive(false);
+		public void CheckIn(PoolableEntity _obj)
+		{
+			_obj.gameObject.SetActive(false);
+			_obj.transform.parent = Transform;
+		}
 		public PoolableEntity Checkout(Effects.SpawnPoolableEntityEffect_SO _prefabEffect_so)
 		{
 			PoolableEntity obj = FindFreeItem(_prefabEffect_so);

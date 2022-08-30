@@ -15,7 +15,7 @@ namespace Project.Interaction
         #endregion
 
         #region  Public API:
-        public override void Handle() => m_event?.Invoke();
+        public override void Perform() => m_event?.Invoke();
         #endregion
     }
 }

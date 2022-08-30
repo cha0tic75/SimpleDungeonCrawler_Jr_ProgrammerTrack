@@ -22,9 +22,6 @@ namespace Project.Interaction
 		#endregion
 
 		#region MonoBehaviour Callback Method(s):
-#if UNITY_EDITOR
-		private void OnValidate() => SetSpriteRendererColor();
-#endif
 		private void Start()
 		{
 			if (RequireditemSO == null) 
@@ -32,9 +29,8 @@ namespace Project.Interaction
 				Debug.LogError($"There is no Item associated with {transform.name}"); 
 				return; 
 			}
-			m_animator = GetComponent<Animator>();
 
-			SetSpriteRendererColor();
+			m_animator = GetComponent<Animator>();
 		} 
 		#endregion
 
@@ -57,15 +53,12 @@ namespace Project.Interaction
 		{
 			m_animator.SetBool(s_isOpenedBoolAnimParam, _state);
 		}
-		#endregion
 
-        #region Internally Used Method(s):
-
-		private void SetSpriteRendererColor()
+		public void DisableGameObject()
 		{
-			if (RequireditemSO == null || m_spriteRenderer == null) { return; }
-			m_spriteRenderer.color = RequireditemSO.ItemVisuals.Color;
+			gameObject.SetActive(false);
 		}
 		#endregion
+
 	}
 }

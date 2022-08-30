@@ -11,16 +11,18 @@ namespace Project.Interaction
     public abstract class BaseEventTriggerHandler : MonoBehaviour
     {
         #region Inspector Assigned Field(s):
-        [SerializeField] private CollisionAcquisitionType m_acquisitionType;
+        [SerializeField] protected CollisionAcquisitionType m_acquisitionType;
         #endregion
 
         #region Public API:
-        public void HandleEventTrigger(CollisionAcquisitionType _acquisitionType)
+        public virtual void HandleEventTrigger(CollisionAcquisitionType _acquisitionType)
         {
             if (!m_acquisitionType.HasFlag(_acquisitionType)) { return; }
-            Handle();
+
+            Perform();
         }
-        public abstract void Handle();
+
+        public abstract void Perform();
         #endregion
     }
 }

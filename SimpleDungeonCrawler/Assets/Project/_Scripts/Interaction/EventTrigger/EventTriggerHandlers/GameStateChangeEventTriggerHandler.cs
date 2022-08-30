@@ -15,7 +15,7 @@ namespace Project.Interaction
         #endregion
     
         #region Public API:
-        public override void Handle()
+        public override void Perform()
         {
             GameManagement.GameManager.Instance.ChangeGameState(m_newGameState);
         }

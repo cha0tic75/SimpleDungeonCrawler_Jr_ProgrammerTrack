@@ -50,7 +50,6 @@ namespace Project.Damage
 
         private void HandleOnEnter(IDamagable _damagable)
         {
-            Debug.Log($"StayDamageDealerHandler: Recieved notification of an IDamagable entering");
             if (!m_currentDamagables.Contains(_damagable))
             {
                 m_currentDamagables.Add(_damagable);
@@ -64,7 +63,6 @@ namespace Project.Damage
 
         private void HandleOnExit(IDamagable _damagable)
         {
-            Debug.Log($"StayDamageDealerHandler: Recieved notification of an IDamagable exiting");
             m_currentDamagables.Remove(_damagable);
 
             if (m_currentDamagables.Count == 0)

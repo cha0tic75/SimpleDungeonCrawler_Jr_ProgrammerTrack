@@ -1,6 +1,11 @@
 TODO:
 
-    - Make sure the other Level scenes are using the new "Collider Notifier system" for damage walls
+    - Conditional dialogue seems to be working for HasItem condition, 
+      I'd like to implement the same concept for items. Perhaps create another player component
+      that tracks objects it has seen(Items, Doors, Teleporters)
+      It could simply be a circleCollider flagged as trigger, then when any of the formentioned 
+      things enter it, it is added to the list.  Then the condition could check if it is in the list.
+
     - Some systems could share the same handlers.  IE: EventTrigger and Interactable
       Think of a way that they can share the behaviour!
       Perhaps a BaseHandler class that all Handlers can implement?

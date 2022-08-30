@@ -4,6 +4,8 @@
 // Written by Tim McCune <tim.mccune1975@gmail.com>
 // ######################################################################
 
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Project.Actors.Player
@@ -45,11 +47,13 @@ namespace Project.Actors.Player
         #region Internally Used Method(s):
         private void Controller_OnInteractionCallback()
         {
- 			Collider2D interactCollider = Physics2D.OverlapCircle(Transform.position, m_interactRadius, m_interactLayerMask);
+ 			List<Collider2D> interactColliders = (Physics2D.OverlapCircleAll(Transform.position, m_interactRadius, m_interactLayerMask)).ToList();
 
-			if (interactCollider != null)
+			if (interactColliders != null && interactColliders.Count > 0)
 			{
-				if (interactCollider.TryGetComponent<Interaction.Interactable>(out var interactable))
+				interactColliders.Sort(SortColliderByDistance);
+
+				if (interactColliders[0].TryGetComponent<Interaction.Interactable>(out var interactable))
 				{
 					if (interactable.enabled == true)
 					{
@@ -63,6 +67,15 @@ namespace Project.Actors.Player
 			if (m_playerInventory == null) { m_playerInventory = GetComponent<PlayerInventory>(); }
 
 			m_playerInventory.AttemptToDropCurrent();
+
+			int SortColliderByDistance(Collider2D _a, Collider2D _b)
+			{
+				float distA = (Transform.position -_a.transform.position).sqrMagnitude;
+				float distB = (Transform.position - _b.transform.position).sqrMagnitude;
+
+				if (distA == distB) { return 0; }
+				return (distA < distB) ? -1 : 1;
+			}
         }
 		#endregion
 	}

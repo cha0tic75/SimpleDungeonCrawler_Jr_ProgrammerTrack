@@ -19,7 +19,7 @@ namespace Project.Interaction
 		#endregion
 
 		#region Public API:
-		public override void Handle() => StartCoroutine(TimerCoroutine());
+		public override void Perform() => StartCoroutine(TimerCoroutine());
 		#endregion
 
 		#region Coroutine(s):
